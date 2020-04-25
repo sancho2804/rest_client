@@ -25,7 +25,10 @@ class rest_client{
 		curl_setopt($curl, CURLOPT_TIMEOUT, 30);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-		if ($this->auth) curl_setopt($curl, CURLOPT_USERPWD, $this->auth['login'].":".$this->auth['password']);
+		if ($this->auth) {
+			curl_setopt($curl, CURLOPT_USERPWD, $this->auth['login'].":".$this->auth['password']);
+			curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: OAuth '.$this->auth['password']));
+		}
 		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($curl, CURLOPT_UNRESTRICTED_AUTH, true);
 		if ($http_method!='GET') curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $http_method);
