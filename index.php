@@ -6,7 +6,7 @@ class rest_client{
 	public $last_request_info=null;
 
 	public function __construct(string $api_uri, string $login=null, string $pass=null){
-		if (!preg_match('/^https?:\/\/((www\.)|())[\w\d][\w\d-.]{0,61}[\w\d]\/.*?$/',$api_uri)) throw new Error("Не верно указан ресурс");
+		if (!preg_match('/^https?:\/\/((www\.)|())[\w\d][\w\d-.]{0,61}[\w\d](:[0-9]{1,5}|())\/.*?$/',$api_uri)) throw new Error("Не верно указан ресурс");
 		if ($api_uri[strlen($api_uri)-1]=='/') $api_uri=substr($api_uri,0,-1);
 		$this->uri=$api_uri;
 
