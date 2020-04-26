@@ -80,5 +80,19 @@ class rest_client{
 		if (json_last_error()!=JSON_ERROR_NONE) throw new Error("Файл имеет невалидный JSON");
 		$this->rules=$rules;
 	}
+
+	public function exec(string $alias, array $object=null, bool $parse_json=true){
+		$item=$this->rules[$alias];
+		if (!$item) throw new Error("Не найден запрашиваемый алиас");
+		$args=func_get_args();
+		for ($i=3; $i < count($args); $i++) {
+			$args[$i]=urlencode($args[$i]);
+			$item['uri']=substr_replace($item['uri'],$args[$i],strpos($item['uri'],'{::}'),4);
+			if (!empty($item['require']) && in_array($i-3,$item['require'])) $item['require']=array_diff($item['require'],[$i-3]);
+		}
+		if (!empty($item['require'])) throw new Error("Необходимых параметров не задано: ".count($item['require']));
+		$item['uri']=str_replace('{::}','',$item['uri']);
+		return $this->client_execute($item['method'],$item['uri'],$object,$parse_json);
+	}
 	
 }
