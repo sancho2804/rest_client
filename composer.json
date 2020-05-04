@@ -4,7 +4,7 @@
     "type": "project",
     "require": {
         "php": "^7.0",
-        "ext-curl": "^7.3"
+        "ext-curl": "*"
     },
     "license": "Apache-2.0",
     "authors": [
