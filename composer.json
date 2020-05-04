@@ -1,0 +1,22 @@
+{
+    "name": "sancho2804/rest_client",
+    "description": "PHP client for REST API services",
+    "type": "project",
+    "require": {
+        "php": "^7.0",
+        "ext-curl": "^7.3"
+    },
+    "license": "Apache2.0",
+    "authors": [
+        {
+            "name": "sancho2804",
+            "email": "sancho2804@mail.ru"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "sancho2804\\rest_client":"/"
+        }
+    }
+}
