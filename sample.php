@@ -2,7 +2,7 @@
 include 'class.php'; //Подключаем файл с классом
 include 'token.php'; //Для примера. В этом файле хранится только токен
 
-use sancho2804\rest_client;//Используем namespace 
+use sancho2804\rest_client; //Используем namespace 
 
 //Создаем объект класса rest_client со ссылкой REST API. Если требуется атворизация по OAuth, то в логин передаем OAuth, а в пароль токен
 $rest=new rest_client\init('https://cloud-api.yandex.net:443/v1/','OAuth',$token);
