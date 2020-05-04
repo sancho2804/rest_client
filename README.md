@@ -2,10 +2,23 @@
 Многие сервисы с которыми приходится иметь дело, имеют на борту REST API. Это очень удобно для разработчиков. Для работы с апи необходимо разрабатывать модуль для решения конкретных задач. Я предлагаю упростить задачу используя **"карты REST API сервисов"**. Такие карты оформляются в формате **JSON**. Но класс можно использовать и для обращения к методам сервиса и напрямую.
 ___
 ## Стартуем ~~, я начну стрелять~~:
+**Устанавливаем через composer:**
+```cmd
+composer require sancho2804/rest_client
+```
+     
 Подключаем файл с классом и создаем объект класса:
 ```php
-include 'index.php'; 
-$yandex_disk=new rest_client('https://cloud-api.yandex.net:443/v1/','OAuth',$token);
+include_once 'vendor/autoload.php';
+use sancho2804\rest_client\init; //Используем namespace 
+$yandex_disk=new init('https://cloud-api.yandex.net:443/v1/','OAuth',$token);
+```
+
+**Скачиваем и подключаем файл с классом:**
+```php
+include_once 'class.php';
+use sancho2804\rest_client\init; //Используем namespace 
+$yandex_disk=new init('https://cloud-api.yandex.net:443/v1/','OAuth',$token);
 ```
 Первый параметр ссылка на REST API нужного вам сервиса. Именно к этой ссылке будут добавляться указываемые в дальнейшем пути (сокращает кол-во повторений). Если авторизация для сервиса не требуется, то 2 и 3 параметр можно опустить.
 ___
