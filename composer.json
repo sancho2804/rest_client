@@ -6,7 +6,7 @@
         "php": "^7.0",
         "ext-curl": "^7.3"
     },
-    "license": "Apache 2.0",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "sancho2804",
