@@ -16,7 +16,7 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "sancho2804\\rest_client\\":"./"
+            "sancho2804\\rest_client\\":""
         }
     }
 }
