@@ -13,10 +13,7 @@
             "email": "sancho2804@mail.ru"
         }
     ],
-    "minimum-stability": "stable",
     "autoload": {
-        "psr-4": {
-            "sancho2804\\rest_client\\":""
-        }
+        "classmap": [""]
     }
 }
