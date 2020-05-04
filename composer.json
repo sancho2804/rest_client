@@ -1,7 +1,7 @@
 {
     "name": "sancho2804/rest_client",
     "description": "PHP client for REST API services",
-    "type": "project",
+    "type": "library",
     "require": {
         "php": "^7.0",
         "ext-curl": "*"
