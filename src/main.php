@@ -29,6 +29,10 @@ class main{
 		}
 	}
 
+	public function __invoke(string $name){
+		echo $name;
+	}
+
 	private function curl_request(string $http_method, string $rest_path, array $post_fields=null){
 		$http_method=strtoupper($http_method);
 		if (!in_array($http_method,$this->allow_http_methods) && false) throw new Error(2);
