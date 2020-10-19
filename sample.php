@@ -18,9 +18,9 @@ $rest=new main('https://cloud-api.yandex.net:443/v1/','OAuth',$token);
 //========================================================================================
 
 $rest->set_service('yandex_disk');//Скармливаем подготовленный JSON
-$result=$rest->exec('dir_info',null,true,'/');//По алиасу обращаемся REST API методу, указывая только путь 4-ым параметром
+// $result=$rest->exec('dir_info',null,true,'/');//По алиасу обращаемся REST API методу, указывая только путь 4-ым параметром
 
-var_dump($result);//Выводим результат
-var_dump($rest->test());
+// var_dump($result);//Выводим результат
+var_dump($rest->mkdir('/test'));
 // echo '<hr>';
 // var_dump($rest->last_request_info);//Выводим заголовки
