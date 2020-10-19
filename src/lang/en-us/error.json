@@ -1,0 +1,11 @@
+{
+    "1":"Not valid resource",
+    "2":"Unknown HTTP method",
+    "3":"Service map is not found",
+    "4":"Cant't read service map",
+    "5":"Service map is empty",
+    "6":"Service map have is not valid JSON",
+    "7":"Need set service name for use service methods",
+    "8":"Service method is not found in map",
+    "9":"Need more arguments"
+}
